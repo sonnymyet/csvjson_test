@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -18,6 +19,13 @@ Swann (Sonny) Htet Myet
 
 int main(){
 	
+	cout << "Hello World" << endl;
+
+	string filePath = "./TestData/TestFiles/input1.csv";
+	string outputPath = "./TestData/ExpectedOutput/output1.json";
+
+	cout << filePath << endl;
 	
-	return 0;
+	system("csvjson ./TestData/TestFiles/input1.csv > ./TestData/ExpectedOutput/output1.json");
+
 }
