@@ -22,7 +22,7 @@ class TestHarness{
 
 private:
 	string inputPath = "TestData/TestFiles";
-	string outputPath = " ./TestData/ExpectedOutput";
+	string outputPath = "TestOutput/Files";
 	string slash = "/";
 	string parentFolder = "./";
 
@@ -72,7 +72,7 @@ public:
 
 	void inputOption(){
 
-		
+
 	}
 
 	void run(){
@@ -86,13 +86,13 @@ public:
 	    }
 
 
-		for (auto &file : testFiles) {
+		for (auto &testFile : testFiles) {
 
-			string inputParameter = parentFolder + inputPath + slash + file;
-			string outfile = file.substr(0, file.length() - 4);
-			string outputParameter = outputPath + slash + outfile + ".json";
+			string inputParameter = parentFolder + inputPath + slash + testFile;
+			string outfile = testFile.substr(0, testFile.length() - 4);
+			string outputParameter = parentFolder + outputPath + slash + outfile + ".json";
 
-			string systemCall = "csvjson " + inputParameter + " >" + outputParameter;
+			string systemCall = "csvjson " + inputParameter + " > " + outputParameter;
 			cout << systemCall << endl;
 			
 			system(systemCall.c_str());

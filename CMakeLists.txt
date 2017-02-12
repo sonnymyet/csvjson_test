@@ -8,8 +8,9 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y")
 
 
-add_subdirectory(test)
+add_subdirectory(Test)
 add_subdirectory(TestData)
+add_subdirectory(TestOutput)
 
 
 
