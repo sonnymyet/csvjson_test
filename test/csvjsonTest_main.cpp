@@ -36,12 +36,16 @@ public:
 	}
 
 
-	bool has_suffix(const string& s, const string& suffix)
-	{
-	    return (s.size() >= suffix.size()) && equal(suffix.rbegin(), suffix.rend(), s.rbegin());    
+// Code adapted from below link
+// http://stackoverflow.com/questions/19189014/how-do-i-find-files-with-a-specific-extension-in-a-directory-that-is-provided-by
+	bool hasExtenstion(const string& str, const string& ext){
+
+	    return (str.size() >= ext.size()) && equal(ext.rbegin(), ext.rend(), str.rbegin());    
 	}
 
 
+// Code adapted from jtshaw
+// http://www.linuxquestions.org/questions/programming-9/c-list-files-in-directory-379323/	
 	int loadFiles(string dir, vector<string> &files){
 
 	    DIR *directoryPath;
@@ -55,7 +59,7 @@ public:
 
 	    while ((directoryFile = readdir(directoryPath)) != NULL) {
 
-	    	if (has_suffix(directoryFile->d_name, ".csv")){
+	    	if (hasExtenstion(directoryFile->d_name, ".csv")){
 
 	        	files.push_back(string(directoryFile->d_name));
 	    	}
@@ -66,6 +70,10 @@ public:
 	}
 
 
+	void inputOption(){
+
+		
+	}
 
 	void run(){
 
@@ -83,16 +91,14 @@ public:
 			string inputParameter = parentFolder + inputPath + slash + file;
 			string outfile = file.substr(0, file.length() - 4);
 			string outputParameter = outputPath + slash + outfile + ".json";
-			
+
 			string systemCall = "csvjson " + inputParameter + " >" + outputParameter;
 			cout << systemCall << endl;
+			
 			system(systemCall.c_str());
 	    }
 
-
 	}
-
-
 };
 
 
@@ -108,11 +114,6 @@ int main(){
 
 	TestHarness t;
 	t.run();
-
-
-
-
-
 
 }
 
