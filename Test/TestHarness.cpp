@@ -69,30 +69,9 @@ public:
 	        	//Do nothing
 	    	}
 	    	else if (hasExtenstion(directoryFile->d_name, ".txt")){
-	        	//Do nothing
-	        	files.push_back(string(directoryFile->d_name));
-	    	}
-	    	/*
-	    	else if (hasExtenstion(directoryFile->d_name, "..")){
-	        	//Do nothing
-	    	}
-	    	else if (hasExtenstion(directoryFile->d_name, ".cmake")){
-	    		//Do nothing
-	    	}
-	    	else if (hasExtenstion(directoryFile->d_name, "Makefile")){
-	    		//Do nothing
-	    	}
-	    	else if (hasExtenstion(directoryFile->d_name, "CMakeFiles")){
-	    		//Do nothing
-	    	}
-	    	else if (hasExtenstion(directoryFile->d_name, "DummyData")){
-	    		//Do nothing
-	    	}
-	    	else{
-	        	files.push_back(string(directoryFile->d_name));
 
+	        	files.push_back(string(directoryFile->d_name));
 	    	}
-	    	*/
 	    }
 	    closedir(directoryPath);
 
@@ -104,11 +83,11 @@ public:
 
 		ifstream file (fileName);
 		string fileContent;
-		string line;
+		string lineBuffer;
 
-		while (getline(file, line)){
+		while (getline(file, lineBuffer)){
 
-			fileContent = line;
+			fileContent += lineBuffer;
 		}
 	    
 		return fileContent;
@@ -120,7 +99,7 @@ public:
 
 
 		loadFiles(inputPath, testFiles);
-		cout << endl << "List of input files: " << endl;
+		cout << endl << "|:: List of input files ::|" << endl;
 
 		// Prints out all input test files
 		for (auto &file : testFiles) {
@@ -139,7 +118,7 @@ public:
 
 			string systemCall = readCommand(inputParameter) + " > " + outputParameter;
 
-			cout << systemCall << endl;
+			cout << "|:: Command called: " << systemCall << " ::|" << endl;
 			
 			try {
 				
@@ -150,7 +129,7 @@ public:
 
 			}
 			if (errno != 0){
-				
+
 			}
 	    }
 

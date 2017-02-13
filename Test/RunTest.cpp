@@ -19,7 +19,7 @@ Swann (Sonny) Htet Myet
 
 int main(){
 	
-	cout << "Running test on csvjson..." << endl;
+	cout << "|:: Running test on csvjson ::|" << endl;
 
 
 	TestHarness test;
