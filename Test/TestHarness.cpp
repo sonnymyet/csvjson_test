@@ -26,8 +26,9 @@ class TestHarness{
 
 private:
 
-	string inputPath = "TestData/TestFiles";
-	string outputPath = "TestOutput/Files";
+	string inputFilePath = "TestData/TestFiles";
+	string outputFilePath = "TestOutput/Files";
+	string outputMessagePath = "TestOutput/Messages";
 	string slash = "/";
 	string parentFolder = "./";
 
@@ -93,12 +94,41 @@ public:
 		return fileContent;
 	}
 
+	/*
+	void GetStdoutFromCommand(string cmd, const string &fileName) {
 
+		string data;
+		FILE * stream;
+
+		const int max_buffer = 256;
+		char buffer[max_buffer];
+		string outPutPath = parentFolder + outputMessagePath + slash + fileName + ".txt";
+		cmd.append(" 2>" + outPutPath);
+
+		stream = popen(cmd.c_str(), "r");
+		if (stream) {
+			while (!feof(stream)){
+
+				if (fgets(buffer, max_buffer, stream) != NULL){
+					data.append(buffer);
+					cout << "Data: " << data << endl;
+				} 
+			pclose(stream);
+			}
+		}
+
+		ofstream outPutFile;
+		outPutFile.open (outPutPath);
+		outPutFile << data;
+		outPutFile.close();
+		//return data;
+	}
+	*/
 
 	void run(){
 
 
-		loadFiles(inputPath, testFiles);
+		loadFiles(inputFilePath, testFiles);
 		cout << endl << "|:: List of input files ::|" << endl;
 
 		// Prints out all input test files
@@ -112,18 +142,21 @@ public:
 	    // Runs csvjson with respect to input test files
 		for (auto &testFile : testFiles) {
 
-			string inputParameter = parentFolder + inputPath + slash + testFile;
 			string fileName = testFile.substr(0, testFile.length() - 4);
-			string outputParameter = parentFolder + outputPath + slash + fileName + ".json";
+			
+			string inputParameter = parentFolder + inputFilePath + slash + testFile;
+			string outputParameter = parentFolder + outputFilePath + slash + fileName + ".json";
+			
+			string outputMessage = parentFolder + outputMessagePath + slash + fileName + ".txt";
 
 			string systemCall = readCommand(inputParameter) + " > " + outputParameter;
 
 			cout << "|:: Command called: " << systemCall << " ::|" << endl;
+
+			systemCall.append(" 2>" + outputMessage);
 			
 			try {
-				
 				system(systemCall.c_str());
-				cout << endl;
 			}
 			catch (int e){
 
