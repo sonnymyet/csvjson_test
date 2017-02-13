@@ -1,3 +1,3 @@
-add_executable(RunTest csvjsonTest_main.cpp)
+add_executable(RunTest RunTest.cpp)
 
 
