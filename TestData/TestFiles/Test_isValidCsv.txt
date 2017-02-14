@@ -1,1 +1,1 @@
-csvjson ./TestData/TestFiles/DummyData/data.csv
+csvjson ./TestData/TestFiles/DummyData/data.cs

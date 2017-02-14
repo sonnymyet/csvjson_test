@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/home/sonny/.local/bin/csvjson", line 11, in <module>
+    sys.exit(launch_new_instance())
+  File "/home/sonny/.local/lib/python2.7/site-packages/csvkit/utilities/csvjson.py", line 192, in launch_new_instance
+    utility.run()
+  File "/home/sonny/.local/lib/python2.7/site-packages/csvkit/cli.py", line 113, in run
+    self.main()
+  File "/home/sonny/.local/lib/python2.7/site-packages/csvkit/utilities/csvjson.py", line 179, in main
+    **self.reader_kwargs
+  File "/home/sonny/.local/lib/python2.7/site-packages/agate/table/from_csv.py", line 52, in from_csv
+    f = open(path, 'Urb')
+TypeError: coercing to Unicode: need string or buffer, LazyFile found

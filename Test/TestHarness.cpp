@@ -137,10 +137,10 @@ public:
 	    		if (expectedFile == actualFile){
 	    			if (expected != actual){
 
-	    				cout << "|:: Test failed for: '" << expectedFile << "' ::|" << endl;
+	    				cout << "|:: Expected and Actual not matched for: '" << expectedFile << "' ::|" << endl;
 	    			}
 	    			else if (expected == actual){
-	    				cout << "|:: Test passed for: '" << expectedFile << "' ::|" << endl;
+	    				cout << "|:: Expected and Actual matched for: '" << expectedFile << "' ::|" << endl;
 	    			}
 	    		} 
 	    	}
