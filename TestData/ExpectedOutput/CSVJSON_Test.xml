@@ -1,0 +1,770 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<System name="CSVJSON_Test">
+  <Parameters>
+    <Parameter id="0" name="isValidPath" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices>
+        <basechoice>true</basechoice>
+      </basechoices>
+      <invalidValues />
+    </Parameter>
+    <Parameter id="1" name="isValidCsv" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices>
+        <basechoice>true</basechoice>
+      </basechoices>
+      <invalidValues />
+    </Parameter>
+    <Parameter id="4" name="isFlagged" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices>
+        <basechoice>true</basechoice>
+      </basechoices>
+      <invalidValues />
+    </Parameter>
+    <Parameter id="5" name="isValidFlag" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices>
+        <basechoice>true</basechoice>
+      </basechoices>
+      <invalidValues />
+    </Parameter>
+    <Parameter id="6" name="flaggedDelimiter" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="7" name="flaggedTabbed" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="8" name="quoteStyle" type="0">
+      <values>
+        <value>0</value>
+        <value>1</value>
+        <value>2</value>
+        <value>3</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="9" name="flaggedDoubleQuote" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="10" name="flaggedEscapeChar" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="11" name="flaggedFieldSizeLimit" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="12" name="flaggedEncoding" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="13" name="flaggedSkipSpace" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="14" name="flaggedVerbose" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="15" name="flaggedLineNum" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="16" name="flaggedZeroBase" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="17" name="flaggedVersion" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="18" name="flaggedIndent" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="19" name="flaggedKey" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="20" name="flaggedStream" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="21" name="flaggedInference" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="22" name="flaggedQuoteStyle" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="23" name="isDefault" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+  </Parameters>
+  <OutputParameters />
+  <Relations>
+    <Relation Strength="1" Default="false">
+      <Parameter name="quoteStyle">
+        <value>0</value>
+        <value>1</value>
+        <value>2</value>
+        <value>3</value>
+      </Parameter>
+      <Parameter name="flaggedQuoteStyle">
+        <value>true</value>
+        <value>false</value>
+      </Parameter>
+    </Relation>
+    <Relation Strength="1" Default="false">
+      <Parameter name="flaggedDelimiter">
+        <value>true</value>
+        <value>false</value>
+      </Parameter>
+      <Parameter name="flaggedTabbed">
+        <value>true</value>
+        <value>false</value>
+      </Parameter>
+      <Parameter name="flaggedDoubleQuote">
+        <value>true</value>
+        <value>false</value>
+      </Parameter>
+      <Parameter name="flaggedEscapeChar">
+        <value>true</value>
+        <value>false</value>
+      </Parameter>
+      <Parameter name="flaggedFieldSizeLimit">
+        <value>true</value>
+        <value>false</value>
+      </Parameter>
+      <Parameter name="flaggedEncoding">
+        <value>true</value>
+        <value>false</value>
+      </Parameter>
+      <Parameter name="flaggedSkipSpace">
+        <value>true</value>
+        <value>false</value>
+      </Parameter>
+      <Parameter name="flaggedVerbose">
+        <value>true</value>
+        <value>false</value>
+      </Parameter>
+      <Parameter name="flaggedLineNum">
+        <value>true</value>
+        <value>false</value>
+      </Parameter>
+      <Parameter name="flaggedZeroBase">
+        <value>true</value>
+        <value>false</value>
+      </Parameter>
+      <Parameter name="flaggedVersion">
+        <value>true</value>
+        <value>false</value>
+      </Parameter>
+      <Parameter name="flaggedIndent">
+        <value>true</value>
+        <value>false</value>
+      </Parameter>
+      <Parameter name="flaggedKey">
+        <value>true</value>
+        <value>false</value>
+      </Parameter>
+      <Parameter name="flaggedStream">
+        <value>true</value>
+        <value>false</value>
+      </Parameter>
+      <Parameter name="flaggedInference">
+        <value>true</value>
+        <value>false</value>
+      </Parameter>
+      <Parameter name="flaggedQuoteStyle">
+        <value>true</value>
+        <value>false</value>
+      </Parameter>
+    </Relation>
+  </Relations>
+  <Constraints>
+    <Constraint text="isValidPath = false =&gt; isValidCsv = false">
+      <Parameters>
+        <Parameter name="isValidPath" />
+        <Parameter name="isValidCsv" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="isFlagged = false =&gt; isValidFlag = false">
+      <Parameters>
+        <Parameter name="isFlagged" />
+        <Parameter name="isValidFlag" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="(quoteStyle = 0 || quoteStyle = 1 || quoteStyle = 2 || quoteStyle = 3) =&gt; flaggedQuoteStyle = true&#xA;">
+      <Parameters>
+        <Parameter name="quoteStyle" />
+        <Parameter name="quoteStyle" />
+        <Parameter name="quoteStyle" />
+        <Parameter name="quoteStyle" />
+        <Parameter name="flaggedQuoteStyle" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="isValidFlag = false =&gt; (flaggedDelimiter = false &amp;&amp; &#xA;flaggedTabbed = false &amp;&amp;&#xA;flaggedDoubleQuote = false &amp;&amp;&#xA;flaggedEscapeChar = false &amp;&amp;&#xA;flaggedFieldSizeLimit = false &amp;&amp;&#xA;flaggedEncoding = false &amp;&amp;&#xA;flaggedSkipSpace = false &amp;&amp;&#xA;flaggedVerbose = false &amp;&amp;&#xA;flaggedLineNum = false &amp;&amp;&#xA;flaggedZeroBase = false &amp;&amp;&#xA;flaggedVersion = false &amp;&amp;&#xA;flaggedIndent = false &amp;&amp;&#xA;flaggedKey = false &amp;&amp;&#xA;flaggedStream = false &amp;&amp;&#xA;flaggedInference = false &amp;&amp;&#xA;flaggedQuoteStyle = false&#xA;)">
+      <Parameters>
+        <Parameter name="isValidFlag" />
+        <Parameter name="flaggedDelimiter" />
+        <Parameter name="flaggedTabbed" />
+        <Parameter name="flaggedDoubleQuote" />
+        <Parameter name="flaggedEscapeChar" />
+        <Parameter name="flaggedFieldSizeLimit" />
+        <Parameter name="flaggedEncoding" />
+        <Parameter name="flaggedSkipSpace" />
+        <Parameter name="flaggedVerbose" />
+        <Parameter name="flaggedLineNum" />
+        <Parameter name="flaggedZeroBase" />
+        <Parameter name="flaggedVersion" />
+        <Parameter name="flaggedIndent" />
+        <Parameter name="flaggedKey" />
+        <Parameter name="flaggedStream" />
+        <Parameter name="flaggedInference" />
+        <Parameter name="flaggedQuoteStyle" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="isFlagged = false =&gt; isDefault = true">
+      <Parameters>
+        <Parameter name="isFlagged" />
+        <Parameter name="isDefault" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="isDefault = true =&gt; isValidFlag = false">
+      <Parameters>
+        <Parameter name="isDefault" />
+        <Parameter name="isValidFlag" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="isValidCsv = false =&gt; isFlagged = false">
+      <Parameters>
+        <Parameter name="isValidCsv" />
+        <Parameter name="isFlagged" />
+      </Parameters>
+    </Constraint>
+  </Constraints>
+  <Testset doi="2">
+    <Testcase TCNo="0">
+      <Value>1</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>0</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+    </Testcase>
+    <Testcase TCNo="1">
+      <Value>2</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>1</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+    </Testcase>
+    <Testcase TCNo="2">
+      <Value>3</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>2</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+    </Testcase>
+    <Testcase TCNo="3">
+      <Value>4</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>3</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+    </Testcase>
+    <Testcase TCNo="4">
+      <Value>5</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>0</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+    </Testcase>
+    <Testcase TCNo="5">
+      <Value>6</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>2</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+    </Testcase>
+    <Testcase TCNo="6">
+      <Value>7</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>1</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+    </Testcase>
+    <Testcase TCNo="7">
+      <Value>8</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>3</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+    </Testcase>
+    <Testcase TCNo="8">
+      <Value>9</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>0</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+    </Testcase>
+    <Testcase TCNo="9">
+      <Value>10</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>3</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+    </Testcase>
+    <Testcase TCNo="10">
+      <Value>11</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>1</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+    </Testcase>
+    <Testcase TCNo="11">
+      <Value>12</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>2</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+    </Testcase>
+    <Testcase TCNo="12">
+      <Value>13</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>0</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+    </Testcase>
+    <Testcase TCNo="13">
+      <Value>14</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>2</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+    </Testcase>
+    <Testcase TCNo="14">
+      <Value>15</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>3</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+    </Testcase>
+    <Testcase TCNo="15">
+      <Value>16</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>1</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+    </Testcase>
+  </Testset>
+  <Header>
+    <Value />
+    <Value>ISVALIDPATH</Value>
+    <Value>ISVALIDCSV</Value>
+    <Value>ISFLAGGED</Value>
+    <Value>ISVALIDFLAG</Value>
+    <Value>FLAGGEDDELIMITER</Value>
+    <Value>FLAGGEDTABBED</Value>
+    <Value>QUOTESTYLE</Value>
+    <Value>FLAGGEDDOUBLEQUOTE</Value>
+    <Value>FLAGGEDESCAPECHAR</Value>
+    <Value>FLAGGEDFIELDSIZELIMIT</Value>
+    <Value>FLAGGEDENCODING</Value>
+    <Value>FLAGGEDSKIPSPACE</Value>
+    <Value>FLAGGEDVERBOSE</Value>
+    <Value>FLAGGEDLINENUM</Value>
+    <Value>FLAGGEDZEROBASE</Value>
+    <Value>FLAGGEDVERSION</Value>
+    <Value>FLAGGEDINDENT</Value>
+    <Value>FLAGGEDKEY</Value>
+    <Value>FLAGGEDSTREAM</Value>
+    <Value>FLAGGEDINFERENCE</Value>
+    <Value>FLAGGEDQUOTESTYLE</Value>
+    <Value>ISDEFAULT</Value>
+  </Header>
+  <Stat-Data>
+    <ExecutionTime>0.02</ExecutionTime>
+    <MaxDomainSize>4</MaxDomainSize>
+    <MinDomainSize>2</MinDomainSize>
+    <TotalNoOfCombination>759</TotalNoOfCombination>
+    <TotalNoOfTests>16</TotalNoOfTests>
+    <Algorithm>IPOG</Algorithm>
+  </Stat-Data>
+</System>
+
