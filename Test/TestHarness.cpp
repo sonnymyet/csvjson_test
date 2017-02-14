@@ -134,10 +134,15 @@ public:
 	    		string actualFilePath = parentFolder + outputMessagePath + slash + actualFile;
 	    		string actual = readFile(actualFilePath);
 
-	    		if (expectedFile == actualFile && expected != actual){
+	    		if (expectedFile == actualFile){
+	    			if (expected != actual){
 
-	    			cout << "|:: Expected message does not match for: '" << expectedFile << "' ::|" << endl;
-	    		}
+	    				cout << "|:: Test failed for: '" << expectedFile << "' ::|" << endl;
+	    			}
+	    			else if (expected == actual){
+	    				cout << "|:: Test passed for: '" << expectedFile << "' ::|" << endl;
+	    			}
+	    		} 
 	    	}
 	    }
 

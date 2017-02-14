@@ -179,6 +179,54 @@
       </basechoices>
       <invalidValues />
     </Parameter>
+    <Parameter id="24" name="isCsvEmpty" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="25" name="containsDelimiter" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="26" name="delimiterEscaped" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="27" name="stringsQuoted" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="28" name="uniqueColumnNames" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="29" name="keyExists" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
   </Parameters>
   <OutputParameters />
   <Relations>
@@ -296,6 +344,36 @@
         <Parameter name="isFlagged" />
       </Parameters>
     </Constraint>
+    <Constraint text="isCsvEmpty = true =&gt; (containsDelimiter = false &amp;&amp;&#xA;delimiterEscaped = false &amp;&amp;&#xA;stringsQuoted = false &amp;&amp;&#xA;uniqueColumnNames = false &amp;&amp;&#xA;keyExists = false)">
+      <Parameters>
+        <Parameter name="isCsvEmpty" />
+        <Parameter name="containsDelimiter" />
+        <Parameter name="delimiterEscaped" />
+        <Parameter name="stringsQuoted" />
+        <Parameter name="uniqueColumnNames" />
+        <Parameter name="keyExists" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="flaggedDelimiter = false =&gt; containsDelimiter = false">
+      <Parameters>
+        <Parameter name="flaggedDelimiter" />
+        <Parameter name="containsDelimiter" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="delimiterEscaped = true =&gt; (flaggedEscapeChar = true ||&#xA;flaggedDoubleQuote = true ||&#xA;flaggedQuoteStyle = true)">
+      <Parameters>
+        <Parameter name="delimiterEscaped" />
+        <Parameter name="flaggedEscapeChar" />
+        <Parameter name="flaggedDoubleQuote" />
+        <Parameter name="flaggedQuoteStyle" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="flaggedKey = false =&gt; keyExists = false">
+      <Parameters>
+        <Parameter name="flaggedKey" />
+        <Parameter name="keyExists" />
+      </Parameters>
+    </Constraint>
   </Constraints>
   <Testset doi="2">
     <Testcase TCNo="0">
@@ -321,6 +399,12 @@
       <Value>false</Value>
       <Value>false</Value>
       <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
     </Testcase>
     <Testcase TCNo="1">
       <Value>2</Value>
@@ -345,6 +429,12 @@
       <Value>false</Value>
       <Value>false</Value>
       <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
     </Testcase>
     <Testcase TCNo="2">
       <Value>3</Value>
@@ -369,6 +459,12 @@
       <Value>false</Value>
       <Value>false</Value>
       <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
     </Testcase>
     <Testcase TCNo="3">
       <Value>4</Value>
@@ -392,6 +488,12 @@
       <Value>true</Value>
       <Value>true</Value>
       <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
       <Value>false</Value>
     </Testcase>
     <Testcase TCNo="4">
@@ -417,6 +519,12 @@
       <Value>false</Value>
       <Value>false</Value>
       <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
     </Testcase>
     <Testcase TCNo="5">
       <Value>6</Value>
@@ -439,6 +547,12 @@
       <Value>false</Value>
       <Value>true</Value>
       <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
       <Value>true</Value>
       <Value>false</Value>
     </Testcase>
@@ -465,6 +579,12 @@
       <Value>true</Value>
       <Value>false</Value>
       <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
     </Testcase>
     <Testcase TCNo="7">
       <Value>8</Value>
@@ -489,6 +609,12 @@
       <Value>false</Value>
       <Value>false</Value>
       <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
     </Testcase>
     <Testcase TCNo="8">
       <Value>9</Value>
@@ -511,6 +637,12 @@
       <Value>false</Value>
       <Value>false</Value>
       <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
       <Value>true</Value>
       <Value>false</Value>
     </Testcase>
@@ -537,6 +669,12 @@
       <Value>true</Value>
       <Value>true</Value>
       <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
     </Testcase>
     <Testcase TCNo="10">
       <Value>11</Value>
@@ -561,6 +699,12 @@
       <Value>false</Value>
       <Value>false</Value>
       <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
     </Testcase>
     <Testcase TCNo="11">
       <Value>12</Value>
@@ -572,12 +716,12 @@
       <Value>true</Value>
       <Value>true</Value>
       <Value>true</Value>
-      <Value>true</Value>
       <Value>false</Value>
       <Value>false</Value>
       <Value>false</Value>
       <Value>false</Value>
       <Value>false</Value>
+      <Value>false</Value>
       <Value>true</Value>
       <Value>true</Value>
       <Value>true</Value>
@@ -585,6 +729,12 @@
       <Value>true</Value>
       <Value>true</Value>
       <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
     </Testcase>
     <Testcase TCNo="12">
       <Value>13</Value>
@@ -595,19 +745,25 @@
       <Value>false</Value>
       <Value>false</Value>
       <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
       <Value>true</Value>
       <Value>false</Value>
       <Value>false</Value>
       <Value>false</Value>
-      <Value>true</Value>
-      <Value>true</Value>
-      <Value>true</Value>
-      <Value>true</Value>
-      <Value>true</Value>
-      <Value>true</Value>
       <Value>false</Value>
-      <Value>true</Value>
-      <Value>true</Value>
       <Value>false</Value>
     </Testcase>
     <Testcase TCNo="13">
@@ -618,18 +774,54 @@
       <Value>true</Value>
       <Value>true</Value>
       <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
       <Value>false</Value>
       <Value>false</Value>
       <Value>false</Value>
       <Value>false</Value>
       <Value>true</Value>
       <Value>true</Value>
-      <Value>true</Value>
-      <Value>true</Value>
-      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+    </Testcase>
+    <Testcase TCNo="14">
+      <Value>15</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
       <Value>false</Value>
       <Value>true</Value>
       <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
       <Value>false</Value>
       <Value>false</Value>
       <Value>false</Value>
@@ -658,13 +850,19 @@
     <Value>FLAGGEDINFERENCE</Value>
     <Value>FLAGGEDQUOTESTYLE</Value>
     <Value>ISDEFAULT</Value>
+    <Value>ISCSVEMPTY</Value>
+    <Value>CONTAINSDELIMITER</Value>
+    <Value>DELIMITERESCAPED</Value>
+    <Value>STRINGSQUOTED</Value>
+    <Value>UNIQUECOLUMNNAMES</Value>
+    <Value>KEYEXISTS</Value>
   </Header>
   <Stat-Data>
-    <ExecutionTime>0.042</ExecutionTime>
+    <ExecutionTime>0.078</ExecutionTime>
     <MaxDomainSize>2</MaxDomainSize>
     <MinDomainSize>2</MinDomainSize>
-    <TotalNoOfCombination>749</TotalNoOfCombination>
-    <TotalNoOfTests>14</TotalNoOfTests>
+    <TotalNoOfCombination>1291</TotalNoOfCombination>
+    <TotalNoOfTests>15</TotalNoOfTests>
     <Algorithm>IPOG</Algorithm>
   </Stat-Data>
 </System>
