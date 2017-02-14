@@ -26,19 +26,27 @@ class TestHarness{
 
 private:
 
-	string inputFilePath = "TestData/TestFiles";
-	string outputFilePath = "TestOutput/Files";
-	string outputMessagePath = "TestOutput/Messages";
 	string slash = "/";
 	string parentFolder = "./";
 
-	vector<string> testFiles;
+	string inputFilePath = "TestData/TestFiles";
+	string inputMessagePath = "TestData/ExpectedMessages";
+
+	string outputFilePath = parentFolder + "TestOutput/Files";
+	string outputMessagePath = parentFolder + "TestOutput/Messages";
+
+
+	vector <string> testFiles;
+	vector <string> inputMessages;
+	vector <string> outputMessages;
 
 public:
 
 	TestHarness(){
 
-		testFiles = vector<string>();
+		testFiles = vector <string>();
+		inputMessages = vector <string>();
+		outputMessages = vector <string>();
 	}
 
 
@@ -80,7 +88,7 @@ public:
 	}
 
 
-	string readCommand(const string &fileName){
+	string readFile(const string &fileName){
 
 		ifstream file (fileName);
 		string fileContent;
@@ -94,36 +102,46 @@ public:
 		return fileContent;
 	}
 
-	/*
-	void GetStdoutFromCommand(string cmd, const string &fileName) {
 
-		string data;
-		FILE * stream;
+	void compareFiles(){
 
-		const int max_buffer = 256;
-		char buffer[max_buffer];
-		string outPutPath = parentFolder + outputMessagePath + slash + fileName + ".txt";
-		cmd.append(" 2>" + outPutPath);
+		loadFiles(inputMessagePath, inputMessages);
+		loadFiles(outputMessagePath, outputMessages);
 
-		stream = popen(cmd.c_str(), "r");
-		if (stream) {
-			while (!feof(stream)){
+		cout << "|:: Expected Message Files ::|" << endl;
+		for (auto &file : inputMessages) {
 
-				if (fgets(buffer, max_buffer, stream) != NULL){
-					data.append(buffer);
-					cout << "Data: " << data << endl;
-				} 
-			pclose(stream);
-			}
-		}
+	        cout << file << endl;
+	    }
 
-		ofstream outPutFile;
-		outPutFile.open (outPutPath);
-		outPutFile << data;
-		outPutFile.close();
-		//return data;
+	    cout << endl;
+
+	    cout << "|:: Actual Message Files ::|" << endl;
+	    for (auto &file : outputMessages) {
+
+	        cout << file << endl;
+	    }
+
+	    cout << endl;
+
+	    for (auto &expectedFile : inputMessages) {
+
+	    	string expectedFilePath = parentFolder + inputMessagePath + slash + expectedFile;
+	    	string expected = readFile(expectedFilePath);
+
+	    	for (auto &actualFile : outputMessages) {
+
+	    		string actualFilePath = parentFolder + outputMessagePath + slash + actualFile;
+	    		string actual = readFile(actualFilePath);
+
+	    		if (expectedFile == actualFile && expected != actual){
+
+	    			cout << "|:: Expected message does not match for: '" << expectedFile << "' ::|" << endl;
+	    		}
+	    	}
+	    }
+
 	}
-	*/
 
 	void run(){
 
@@ -149,25 +167,23 @@ public:
 			
 			string outputMessage = parentFolder + outputMessagePath + slash + fileName + ".txt";
 
-			string systemCall = readCommand(inputParameter) + " > " + outputParameter;
+			string systemCall = readFile(inputParameter) + " > " + outputParameter;
 
 			cout << "|:: Command called: " << systemCall << " ::|" << endl;
 
 			systemCall.append(" 2>" + outputMessage);
 			
-			try {
-				system(systemCall.c_str());
-			}
-			catch (int e){
+			system(systemCall.c_str());
 
-			}
-			if (errno != 0){
-
-			}
+			cout << endl;
 	    }
 
+	    compareFiles ();
 	}
-};
+
+
+
+}; // END class
 
 
 

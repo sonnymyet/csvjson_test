@@ -1,0 +1,6 @@
+usage: csvjson [-h] [-d DELIMITER] [-t] [-q QUOTECHAR] [-u {0,1,2,3}] [-b]
+               [-p ESCAPECHAR] [-z FIELD_SIZE_LIMIT] [-e ENCODING] [-S] [-v]
+               [-l] [--zero] [-i INDENT] [-k KEY] [--lat LAT] [--lon LON]
+               [--crs CRS] [--stream] [-y SNIFF_LIMIT] [--no-inference]
+               [FILE]
+csvjson: error: unrecognized arguments: -a
