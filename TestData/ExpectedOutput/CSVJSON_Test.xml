@@ -174,7 +174,9 @@
         <value>true</value>
         <value>false</value>
       </values>
-      <basechoices />
+      <basechoices>
+        <basechoice>false</basechoice>
+      </basechoices>
       <invalidValues />
     </Parameter>
   </Parameters>
@@ -286,6 +288,12 @@
         <Parameter name="flaggedStream" />
         <Parameter name="flaggedInference" />
         <Parameter name="flaggedQuoteStyle" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="isDefault = true =&gt; isFlagged = false">
+      <Parameters>
+        <Parameter name="isDefault" />
+        <Parameter name="isFlagged" />
       </Parameters>
     </Constraint>
   </Constraints>
@@ -432,7 +440,7 @@
       <Value>true</Value>
       <Value>false</Value>
       <Value>true</Value>
-      <Value>true</Value>
+      <Value>false</Value>
     </Testcase>
     <Testcase TCNo="6">
       <Value>7</Value>
@@ -456,7 +464,7 @@
       <Value>false</Value>
       <Value>true</Value>
       <Value>false</Value>
-      <Value>true</Value>
+      <Value>false</Value>
     </Testcase>
     <Testcase TCNo="7">
       <Value>8</Value>
@@ -480,7 +488,7 @@
       <Value>true</Value>
       <Value>false</Value>
       <Value>false</Value>
-      <Value>true</Value>
+      <Value>false</Value>
     </Testcase>
     <Testcase TCNo="8">
       <Value>9</Value>
@@ -504,7 +512,7 @@
       <Value>false</Value>
       <Value>true</Value>
       <Value>true</Value>
-      <Value>true</Value>
+      <Value>false</Value>
     </Testcase>
     <Testcase TCNo="9">
       <Value>10</Value>
@@ -552,7 +560,7 @@
       <Value>true</Value>
       <Value>false</Value>
       <Value>false</Value>
-      <Value>true</Value>
+      <Value>false</Value>
     </Testcase>
     <Testcase TCNo="11">
       <Value>12</Value>
@@ -564,7 +572,7 @@
       <Value>true</Value>
       <Value>true</Value>
       <Value>true</Value>
-      <Value>false</Value>
+      <Value>true</Value>
       <Value>false</Value>
       <Value>false</Value>
       <Value>false</Value>
@@ -586,10 +594,6 @@
       <Value>true</Value>
       <Value>false</Value>
       <Value>false</Value>
-      <Value>true</Value>
-      <Value>false</Value>
-      <Value>true</Value>
-      <Value>true</Value>
       <Value>false</Value>
       <Value>true</Value>
       <Value>false</Value>
@@ -601,6 +605,10 @@
       <Value>true</Value>
       <Value>true</Value>
       <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
     </Testcase>
     <Testcase TCNo="13">
       <Value>14</Value>
@@ -611,20 +619,20 @@
       <Value>true</Value>
       <Value>true</Value>
       <Value>false</Value>
-      <Value>true</Value>
-      <Value>false</Value>
-      <Value>false</Value>
-      <Value>false</Value>
-      <Value>false</Value>
-      <Value>false</Value>
       <Value>false</Value>
       <Value>false</Value>
       <Value>false</Value>
       <Value>true</Value>
       <Value>true</Value>
-      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
       <Value>false</Value>
       <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
     </Testcase>
   </Testset>
   <Header>
@@ -652,10 +660,10 @@
     <Value>ISDEFAULT</Value>
   </Header>
   <Stat-Data>
-    <ExecutionTime>0.021</ExecutionTime>
+    <ExecutionTime>0.042</ExecutionTime>
     <MaxDomainSize>2</MaxDomainSize>
     <MinDomainSize>2</MinDomainSize>
-    <TotalNoOfCombination>767</TotalNoOfCombination>
+    <TotalNoOfCombination>749</TotalNoOfCombination>
     <TotalNoOfTests>14</TotalNoOfTests>
     <Algorithm>IPOG</Algorithm>
   </Stat-Data>
